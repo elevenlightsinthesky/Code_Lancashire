@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 250, 250, 250;
+  --background-end-rgb: 245, 245, 245;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white py-2 px-4 rounded-md hover:bg-primary-dark transition-colors;
+  }
+  
+  .chat-bubble {
+    @apply p-3 rounded-lg max-w-[80%] mb-4;
+  }
+  
+  .chat-bubble-user {
+    @apply chat-bubble bg-primary text-white ml-auto;
+  }
+  
+  .chat-bubble-bot {
+    @apply chat-bubble bg-gray-100 text-gray-800;
+  }
+  
+  .input-field {
+    @apply w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+  
+  .select-field {
+    @apply p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+  
+  .context-card {
+    @apply w-full bg-white p-4 border border-gray-200 rounded-lg shadow-sm;
+  }
+  
+  .suggestion-item {
+    @apply p-3 mb-2 bg-gray-100 hover:bg-gray-200 cursor-pointer rounded-md transition-colors;
+  }
+}
